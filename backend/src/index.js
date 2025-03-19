@@ -6,7 +6,7 @@ console.log("MONGODB_URI:", process.env.MONGODB_URI ? "Loaded" : "Not Loaded");
 
 import express from "express";
 const app = express();
-
+app.use(express.json());
 import authRoutes from "./routes/auth.route.js";
 import { connectDB } from "./lib/db.js";
 
