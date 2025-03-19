@@ -1,10 +1,20 @@
-import express from "express"
-const app=express();
+import dotenv from "dotenv";
+dotenv.config();  // Load environment variables
 
-import authRoutes from "./routes/auth.route.js"
+console.log("PORT:", process.env.PORT); // Debugging
+console.log("MONGODB_URI:", process.env.MONGODB_URI ? "Loaded" : "Not Loaded");
 
-app.use('/api/auth',authRoutes)
+import express from "express";
+const app = express();
 
-app.listen(5001,()=>{
-      console.log('server is running in the port 5001')
+import authRoutes from "./routes/auth.route.js";
+import { connectDB } from "./lib/db.js";
+
+const PORT = process.env.PORT || 5000;
+
+app.use('/api/auth', authRoutes);
+
+app.listen(PORT, () => {
+    console.log('Server is running on PORT:', PORT);
+    connectDB();
 });
