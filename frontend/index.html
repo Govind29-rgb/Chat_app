@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chat App</title>
-  <link href="./dist/output.css" rel="stylesheet">
+  <link href="./dist/output.css" rel="stylesheet" /> <!-- ✅ Only if you're using Tailwind via CDN build -->
 </head>
 <body>
-  <div id="root"></div> <!-- Important for React to mount -->
-  <script type="module" src="/src/main.jsx"></script> <!-- Make sure this path is correct -->
+  <div id="root"></div> <!-- ✅ React mounts here -->
+  <script type="module" src="/src/main.jsx"></script> <!-- ✅ Vite entry point -->
 </body>
 </html>
